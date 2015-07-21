@@ -24,7 +24,7 @@ function partial($template, $data=array(), $debug=false) {
 
   if($debug) {
     $tpl = new Savant3(\Slim\Extras\Views\Savant::$savantOptions);
-    echo '<pre>' . $tpl->fetch($template . '.php') . '</pre>';
+    echo '<pre>' . $tpl->fetch('partials/' . $template . '.php') . '</pre>';
     return '';
   }
 
@@ -33,6 +33,6 @@ function partial($template, $data=array(), $debug=false) {
   foreach($data as $k=>$v) {
     $tpl->{$k} = $v;
   }
-  $tpl->display($template . '.php');
+  $tpl->display('partials/' . $template . '.php');
   return ob_get_clean();
 }
