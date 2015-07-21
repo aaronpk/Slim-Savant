@@ -14,7 +14,8 @@
   ],
   "autoload": {
     "files": [
-      "Savant.php"
+      "Savant.php",
+      "SlimSavant.php"
     ]
   }
 }
