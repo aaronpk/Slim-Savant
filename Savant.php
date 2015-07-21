@@ -66,10 +66,12 @@ class Savant extends \Slim\View
    * @param string $template The template name specified in Slim::render()
    * @return string
    */
-  public function render($template)
+  public function render($template, $data=array())
   {
+    $data = array_merge($this->data->all(), (array)$data);
+
     $savant = $this->getInstance();
-    $savant->assign($this->data);
+    $savant->assign($data);
 
     return $savant->fetch($template);
   }
